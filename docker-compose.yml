@@ -1,0 +1,16 @@
+services:
+  mysql:
+    image: mysql:8.4
+    container_name: cybershield-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: cybershield
+      MYSQL_USER: cybershield
+      MYSQL_PASSWORD: cybershield
+      MYSQL_ROOT_PASSWORD: rootpassword
+    ports:
+      - "3306:3306"
+    volumes:
+      - cybershield_data:/var/lib/mysql
+volumes:
+  cybershield_data:
